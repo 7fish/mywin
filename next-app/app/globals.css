@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+button[type="submit"] {
+  background-color: #6772e5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #5469d4;
+}
+
+button[type="submit"]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Ensure Stripe elements container has proper sizing */
+.StripeElement {
+  width: 100%;
+  padding: 10px 14px;
+}
+
+/* Custom class for larger elements */
+.custom-stripe-element {
+  font-size: 18px;
+  padding: 15px;
+}
+
+.custom-stripe-element--focus {
+  border-color: #6772e5;
+  box-shadow: 0 0 0 1px #6772e5;
+}
+
+/* Make sure the iframe (Stripe element) scales properly */
+.StripeElement iframe {
+  min-height: 40px !important;
+}
